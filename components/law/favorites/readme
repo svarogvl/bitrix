@@ -1,0 +1,17 @@
+пример использования
+
+<script type="text/javascript" src="/bitrix/js/main/ajax.js"></script>
+		<?$APPLICATION->IncludeComponent("law:favorites", "",
+		array(
+			"SAVE_IN"=>"SESSION",//где храним, доступно в сессии, куки, UF, IBlock
+			"SEPARATOR"=>",",//разделитель через который сохраняем элементы
+			"PARAM"=>"FAVORITE",//название свойства
+			"OBJECT"=>"object", //название параметра в котором передается значение
+			"ACTION"=>"action", //название параметра в котором передается действие add/del
+			"VALUE"=>$arResult["ID"],//значение которое сохраняем
+			"AJAX_MODE" => "N",  // режим AJAX
+			"AJAX_OPTION_SHADOW" => "N", // затемнять область
+			"AJAX_OPTION_JUMP" => "Y", // скроллить страницу до компонента
+			"AJAX_OPTION_STYLE" => "Y", // подключать стили
+			"AJAX_OPTION_HISTORY" => "N",
+		));?>
